@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nasreen Aydah — Creative Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root {
+      --butter: #f6e7a8;
+      --butter-light: #fbf3ce;
+      --sage: #9baa82;
+      --sage-dark: #52634a;
+      --cream: #faf7eb;
+      --ink: #253128;
+      --orange: #d77b4b;
+      --white: #fffdf5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
+    }
+
+
+    /* ================= NAVIGATION ================= */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 25px 5vw;
+
+      mix-blend-mode: multiply;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 27px;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--ink);
+
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+
+      transition: opacity .3s;
+    }
+
+    .nav-links a:hover {
+      opacity: .45;
+    }
+
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 100vh;
+
+      background: var(--butter);
+
+      position: relative;
+      overflow: hidden;
+
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      width: 100%;
+      padding: 130px 8vw 100px;
+
+      position: relative;
+      z-index: 5;
+    }
+
+    .small-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+
+      color: var(--sage-dark);
+
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-weight: 400;
+
+      font-size: clamp(70px, 12vw, 160px);
+
+      line-height: .82;
+      letter-spacing: -7px;
+
+      max-width: 1000px;
+    }
+
+    .hero h1 em {
+      color: var(--sage-dark);
+      display: block;
+    }
+
+    .hero-intro {
+      max-width: 490px;
+
+      margin-top: 45px;
+
+      font-size: 15px;
+      line-height: 1.8;
+
+      color: var(--sage-dark);
+    }
+
+    .scroll {
+      position: absolute;
+
+      bottom: 35px;
+      left: 8vw;
+
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+
+      color: var(--sage-dark);
+    }
+
+
+    /* ================= KOI FISH ================= */
+
+    .koi {
+      position: absolute;
+
+      width: 260px;
+      height: 110px;
+
+      opacity: .9;
+
+      pointer-events: none;
+    }
+
+    .koi-one {
+      right: 5%;
+      top: 20%;
+
+      transform: rotate(-12deg);
+
+      animation: swim 8s ease-in-out infinite;
+    }
+
+    .koi-two {
+      left: -40px;
+      bottom: 13%;
+
+      transform: rotate(175deg) scale(.7);
+
+      animation: swimReverse 10s ease-in-out infinite;
+    }
+
+    .koi-body {
+      position: absolute;
+
+      left: 45px;
+      top: 28px;
+
+      width: 150px;
+      height: 65px;
+
+      border-radius: 60% 50% 45% 60%;
+
+      background: white;
+
+      box-shadow: inset -25px 0 0 #ece5c7;
+    }
+
+    .koi-body::before {
+      content: "";
+
+      position: absolute;
+
+      width: 48px;
+      height: 38px;
+
+      left: 37px;
+      top: 3px;
+
+      background: var(--orange);
+
+      border-radius: 50%;
+
+      transform: rotate(-15deg);
+    }
+
+    .koi-body::after {
+      content: "";
+
+      position: absolute;
+
+      width: 35px;
+      height: 25px;
+
+      right: 28px;
+      bottom: 3px;
+
+      background: var(--orange);
+
+      border-radius: 50%;
+    }
+
+    .koi-tail {
+      position: absolute;
+
+      left: 0;
+      top: 32px;
+
+      width: 75px;
+      height: 55px;
+
+      background: white;
+
+      clip-path: polygon(
+        100% 50%,
+        0 0,
+        25% 50%,
+        0 100%
+      );
+    }
+
+    .koi-fin {
+      position: absolute;
+
+      background: #e7ddbd;
+
+      width: 48px;
+      height: 22px;
+
+      top: 17px;
+      left: 105px;
+
+      border-radius: 100% 0;
+
+      transform: rotate(20deg);
+    }
+
+    .koi-eye {
+      position: absolute;
+
+      right: 26px;
+      top: 45px;
+
+      width: 6px;
+      height: 6px;
+
+      background: var(--ink);
+
+      border-radius: 50%;
+    }
+
+    @keyframes swim {
+      0%, 100% {
+        transform: translateX(0) rotate(-12deg);
+      }
+
+      50% {
+        transform: translateX(-60px) rotate(-5deg);
+      }
+    }
+
+    @keyframes swimReverse {
+      0%, 100% {
+        transform: translateX(0) rotate(175deg) scale(.7);
+      }
+
+      50% {
+        transform: translateX(70px) rotate(170deg) scale(.7);
+      }
+    }
+
+
+    /* ================= ABOUT ================= */
+
+    .about {
+      padding: 140px 8vw;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 10vw;
+
+      align-items: center;
+    }
+
+    .about-image {
+      height: 550px;
+      background: var(--sage);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    
+
+    .about-image::after {
+  content: "CS · Marketing · Creativity";
+
+  position: absolute;
+
+  top: 25px;
+  left: 25px;
+
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  color: #000000;
+
+  z-index: 10;
+}
+
+
+    .about-text .label,
+    .section-label {
+      font-size: 10px;
+
+      text-transform: uppercase;
+      letter-spacing: 3px;
+
+      color: var(--sage-dark);
+
+      margin-bottom: 20px;
+    }
+
+    .about-text h2 {
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(50px, 6vw, 80px);
+
+      font-weight: 400;
+
+      line-height: .95;
+
+      letter-spacing: -3px;
+
+      margin-bottom: 30px;
+    }
+
+    .about-text h2 em {
+      color: var(--sage-dark);
+    }
+
+    .about-text p {
+      max-width: 500px;
+
+      color: #697263;
+
+      font-size: 14px;
+
+      line-height: 1.9;
+
+      margin-bottom: 20px;
+    }
+
+
+    /* ================= MARQUEE ================= */
+
+    .marquee {
+      background: var(--sage-dark);
+
+      color: var(--butter-light);
+
+      overflow: hidden;
+
+      padding: 18px 0;
+
+      white-space: nowrap;
+    }
+
+    .marquee-inner {
+      display: inline-block;
+
+      animation: marquee 20s linear infinite;
+
+      font-family: "Playfair Display", serif;
+
+      font-size: 23px;
+
+      font-style: italic;
+    }
+
+    @keyframes marquee {
+
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+
+    }
+
+
+    /* ================= WORK ================= */
+
+    .work {
+      padding: 140px 6vw;
+
+      background: var(--butter-light);
+    }
+
+    .work-header {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: end;
+
+      margin-bottom: 70px;
+    }
+
+    .work-header h2 {
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(60px, 9vw, 110px);
+
+      font-weight: 400;
+
+      letter-spacing: -5px;
+
+      line-height: .8;
+    }
+
+    .work-header p {
+      max-width: 280px;
+
+      font-size: 12px;
+
+      line-height: 1.8;
+
+      color: #697263;
+    }
+
+    .work-grid {
+      display: grid;
+
+      grid-template-columns: 1.4fr 1fr;
+
+      gap: 18px;
+    }
+
+    .project {
+      min-height: 450px;
+
+      padding: 28px;
+
+      position: relative;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: end;
+
+      overflow: hidden;
+
+      transition: transform .4s;
+    }
+
+    .project:hover {
+      transform: translateY(-7px);
+    }
+
+    .project-one {
+      background: var(--sage);
+    }
+
+    .project-two {
+      background: var(--butter);
+    }
+
+    .project-three {
+      background: #d8dfc5;
+    }
+
+    .project-four {
+      background: var(--sage-dark);
+      color: var(--butter-light);
+    }
+
+    .project-number {
+      position: absolute;
+
+      top: 25px;
+      left: 28px;
+
+      font-size: 9px;
+
+      letter-spacing: 2px;
+
+      opacity: .6;
+    }
+
+    .project h3 {
+      font-family: "Playfair Display", serif;
+
+      font-weight: 400;
+
+      font-size: 42px;
+
+      line-height: .95;
+
+      max-width: 500px;
+    }
+
+    .project p {
+      font-size: 11px;
+
+      margin-top: 12px;
+
+      opacity: .65;
+    }
+
+
+    /* ================= INTERESTS ================= */
+
+    .interests {
+      padding: 140px 8vw;
+
+      background: var(--cream);
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 10vw;
+    }
+
+    .interests h2 {
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(55px, 7vw, 90px);
+
+      font-weight: 400;
+
+      line-height: .9;
+
+      letter-spacing: -4px;
+    }
+
+    .interests h2 em {
+      color: var(--orange);
+    }
+
+    .interest-list {
+      border-top: 1px solid #cdd1c2;
+    }
+
+    .interest {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      padding: 22px 0;
+
+      border-bottom: 1px solid #cdd1c2;
+
+      font-size: 14px;
+    }
+
+    .interest span {
+      color: var(--sage-dark);
+      font-size: 11px;
+    }
+
+
+    /* ================= CONTACT ================= */
+
+    .contact {
+      padding: 150px 8vw;
+
+      background: var(--sage);
+
+      text-align: center;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .contact h2 {
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(60px, 10vw, 130px);
+
+      font-weight: 400;
+
+      line-height: .85;
+
+      letter-spacing: -6px;
+    }
+
+    .contact h2 em {
+      color: var(--butter-light);
+    }
+
+    .contact p {
+      margin: 35px auto;
+
+      max-width: 430px;
+
+      font-size: 13px;
+
+      line-height: 1.8;
+
+      color: var(--sage-dark);
+    }
+
+    .contact-button {
+      display: inline-block;
+
+      padding: 16px 30px;
+
+      background: var(--ink);
+
+      color: var(--butter-light);
+
+      text-decoration: none;
+
+      border-radius: 50px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 2px;
+
+      font-size: 10px;
+
+      transition: transform .3s;
+    }
+
+    .contact-button:hover {
+      transform: translateY(-4px);
+    }
+
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: var(--ink);
+
+      color: var(--butter-light);
+
+      padding: 35px 6vw;
+    }
+
+    .footer-content {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-family: "Playfair Display", serif;
+
+      font-size: 35px;
+    }
+
+    .footer-links {
+      display: flex;
+
+      gap: 25px;
+
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: var(--butter-light);
+
+      text-decoration: none;
+
+      font-size: 10px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1.5px;
+    }
+
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-content {
+        padding-left: 7vw;
+      }
+
+      .hero h1 {
+        letter-spacing: -4px;
+      }
+
+      .koi {
+        transform: scale(.65);
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+
+        padding: 100px 7vw;
+      }
+
+      .about-image {
+        height: 420px;
+      }
+
+      .work {
+        padding: 100px 7vw;
+      }
+
+      .work-header {
+        display: block;
+      }
+
+      .work-header p {
+        margin-top: 30px;
+      }
+
+      .work-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .interests {
+        grid-template-columns: 1fr;
+
+        padding: 100px 7vw;
+      }
+
+      .contact {
+        padding: 110px 7vw;
+      }
+
+      .contact h2 {
+        letter-spacing: -4px;
+      }
+
+      .footer-content {
+        display: block;
+      }
+
+      .footer-links {
+        margin-top: 25px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- ================= NAVIGATION ================= -->
+
+  <nav>
+
+    <a href="#" class="logo">
+      Nasreen Aydah
+    </a>
+
+    <ul class="nav-links">
+
+      <li>
+        <a href="#about">About</a>
+      </li>
+
+      <li>
+        <a href="#work">Work</a>
+      </li>
+
+      <li>
+        <a href="#interests">Interests</a>
+      </li>
+
+      <li>
+        <a href="#contact">Contact</a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+
+  <!-- ================= HERO ================= -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="small-title">
+        Computer Science · Marketing · Creative
+      </div>
+
+      <h1>
+        hello,
+        <em>I'm Nasreen.</em>
+      </h1>
+
+      <p class="hero-intro">
+        I'm a junior at the University of Mississippi studying
+        Computer Science with a minor in Marketing. I love
+        building things, exploring new ideas, and finding
+        creative ways to bring technology and storytelling together.
+      </p>
+
+    </div>
+
+
+    <!-- KOI FISH -->
+
+    <div class="koi koi-one">
+
+      <div class="koi-tail"></div>
+
+      <div class="koi-body"></div>
+
+      <div class="koi-fin"></div>
+
+      <div class="koi-eye"></div>
+
+    </div>
+
+
+    <div class="koi koi-two">
+
+      <div class="koi-tail"></div>
+
+      <div class="koi-body"></div>
+
+      <div class="koi-fin"></div>
+
+      <div class="koi-eye"></div>
+
+    </div>
+
+
+    <div class="scroll">
+      ↓ scroll to explore
+    </div>
+
+  </section>
+
+
+  <!-- ================= ABOUT ================= -->
+
+  <section class="about" id="about">
+
+    <div class="about-image">
+      <div class="about-image">
+  <img src="IMG_6510.jpg" alt="Nasreen Aydah">
+</div>
+
+
+    </div>
+
+
+    <div class="about-text">
+
+      <div class="label">
+        A little about me
+      </div>
+
+      <h2>
+        Curious by<br>
+        <em>nature.</em>
+      </h2>
+
+      <p>
+        Hi, I'm Nasreen! I'm a junior at the University of
+        Mississippi studying Computer Science with a minor
+        in Marketing.
+      </p>
+
+      <p>
+        I'm interested in the creative side of technology —
+        especially web development and game development.
+        I enjoy creating websites and thinking about how
+        design, technology, and storytelling can work together.
+      </p>
+
+      <p>
+        Outside of school, I'm usually reading, sewing,
+        or trying out a new hobby. I'm naturally curious,
+        and I love learning something just because it
+        catches my attention.
+      </p>
+
+      <p>
+        I'm also interested in law school, particularly
+        the ways technology and other fields intersect with
+        law. I'm still exploring where that path might take me,
+        and that's part of what makes it exciting.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= MARQUEE ================= -->
+
+  <div class="marquee">
+
+    <div class="marquee-inner">
+
+      code · create · explore · learn · make ·
+      code · create · explore · learn · make ·
+      code · create · explore · learn · make ·
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= WORK ================= -->
+
+  <section class="work" id="work">
+
+    <div class="work-header">
+
+      <h2>
+        Selected<br>
+        work.
+      </h2>
+
+      <p>
+        A collection of things I've created,
+        explored, designed, or obsessed over.
+        I'll be adding more here soon.
+      </p>
+
+    </div>
+
+
+    <div class="work-grid">
+
+
+      <!-- PROJECT 01 -->
+
+      <article class="project project-one">
+
+        <div class="project-number">
+          01 / PROJECT
+        </div>
+
+        <h3>
+          A project
+          I'm proud of.
+        </h3>
+
+        <p>
+          Web Development · Design · Concept
+        </p>
+
+      </article>
+
+
+      <!-- PROJECT 02 -->
+
+      <article class="project project-two">
+
+        <div class="project-number">
+          02 / PROJECT
+        </div>
+
+        <h3>
+          Something
+          I created.
+        </h3>
+
+        <p>
+          Creative · Technology · Strategy
+        </p>
+
+      </article>
+
+
+      <!-- PROJECT 03 -->
+
+      <article class="project project-three">
+
+        <div class="project-number">
+          03 / PROJECT
+        </div>
+
+        <h3>
+          An idea
+          brought to life.
+        </h3>
+
+        <p>
+          Design · Research · Development
+        </p>
+
+      </article>
+
+
+      <!-- PROJECT 04 -->
+
+      <article class="project project-four">
+
+        <div class="project-number">
+          04 / PROJECT
+        </div>
+
+        <h3>
+          What's
+          next?
+        </h3>
+
+        <p>
+          More experiments coming soon.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= INTERESTS ================= -->
+
+  <section class="interests" id="interests">
+
+    <div>
+
+      <div class="section-label">
+        Beyond the screen
+      </div>
+
+      <h2>
+        Always
+        <em>learning.</em>
+      </h2>
+
+    </div>
+
+
+    <div class="interest-list">
+
+      <div class="interest">
+        <strong>Web Development</strong>
+        <span>Building things</span>
+      </div>
+
+      <div class="interest">
+        <strong>Game Development</strong>
+        <span>Creating worlds</span>
+      </div>
+
+      <div class="interest">
+        <strong>Marketing</strong>
+        <span>Ideas + people</span>
+      </div>
+
+      <div class="interest">
+        <strong>Sewing</strong>
+        <span>Making things by hand</span>
+      </div>
+
+      <div class="interest">
+        <strong>Reading</strong>
+        <span>Getting lost in stories</span>
+      </div>
+
+      <div class="interest">
+        <strong>Law</strong>
+        <span>Something I'm exploring</span>
+      </div>
+
+      <div class="interest">
+        <strong>New Hobbies</strong>
+        <span>Always trying something</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= CONTACT ================= -->
+
+  <section class="contact" id="contact">
+
+    <div class="section-label">
+      Let's connect
+    </div>
+
+    <h2>
+      Have an idea?<br>
+      <em>Let's talk.</em>
+    </h2>
+
+    <p>
+      I'm always interested in meeting new people,
+      learning about creative opportunities, and
+      working on something interesting.
+    </p>
+
+    <a
+      href="mailto:your@email.com"
+      class="contact-button"
+    >
+      Say hello →
+    </a>
+
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="footer-content">
+
+      <div class="footer-logo">
+        Nasreen Aydah
+      </div>
+
+      <ul class="footer-links">
+
+        <li>
+          <a href="#about">About</a>
+        </li>
+
+        <li>
+          <a href="#work">Work</a>
+        </li>
+
+        <li>
+          <a href="#interests">Interests</a>
+        </li>
+
+        <li>
+          <a href="mailto:nasreenaydah@email.com">
+            Email
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </footer>
+
+
+</body>
+</html>
